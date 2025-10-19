@@ -12,6 +12,7 @@
         "laravel/sanctum": "^4.2",
         "laravel/socialite": "^5.23",
         "laravel/tinker": "^2.9",
+        "league/flysystem-aws-s3-v3": "^3.29",
         "maatwebsite/excel": "^3.1",
         "nwidart/laravel-modules": "^12.0",
         "onesignal/onesignal-php-api": "^2.2",
@@ -31,7 +32,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Modules\\Auth\\": "Modules/Auth/app"
+            "Modules\\Auth\\": "Modules/Auth/app",
+            "Modules\\Student\\": "Modules/Student/app",
+            "Modules\\Exam\\": "Modules/Exam/app",
+            "Modules\\ExamAnswer\\": "Modules/ExamAnswer/app"
         }
     },
     "autoload-dev": {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Auth\Http\Requests;
+namespace Modules\ExamAnswer\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ResetUserRequest extends FormRequest
+class SubmitExamRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -12,7 +12,10 @@ class ResetUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'password' => 'required|string|confirmed|min:8',
+            'student_id' => 'required|integer|exists:students,id',
+            'exam_id'    => 'required|integer|exists:exams,id',
+            'answers'    => 'required|array',
+            'answers.*'  => 'integer|nullable',
         ];
     }
 

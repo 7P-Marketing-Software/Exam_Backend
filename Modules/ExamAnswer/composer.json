@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/examanswer",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\ExamAnswer\\": "app/",
+            "Modules\\ExamAnswer\\Database\\Factories\\": "database/factories/",
+            "Modules\\ExamAnswer\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\ExamAnswer\\Tests\\": "tests/"
+        }
+    }
+}

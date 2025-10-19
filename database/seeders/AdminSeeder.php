@@ -16,16 +16,6 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         $AdminRole = Role::firstOrCreate(['name' => 'Admin', 'guard_name' => 'web']);
-        $UserRole = Role::firstOrCreate(['name' => 'User', 'guard_name' => 'web']);
-
-        $permissions = [
-        ];
-
-        foreach ($permissions as $permission) {
-            Permission::firstOrCreate(['name' => $permission, 'guard_name' => 'web']);
-        }
-
-        $AdminRole->syncPermissions($permissions);
 
         $superAdminUser = User::updateOrCreate([
             'email' => 'shokry@gmail.com',
@@ -37,6 +27,5 @@ class AdminSeeder extends Seeder
 
 
         $superAdminUser->assignRole($AdminRole);
-        $superAdminUser->syncPermissions($permissions);
     }
 }

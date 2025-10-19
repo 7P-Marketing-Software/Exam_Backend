@@ -141,6 +141,7 @@ return [
         Illuminate\Routing\RoutingServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
+        Illuminate\Validation\ValidationServiceProvider::class,
     ],
 
     'aliases' => [
@@ -151,6 +152,7 @@ return [
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Route' => Illuminate\Support\Facades\Route::class,
+        'Validator' => Illuminate\Support\Facades\Validator::class,
     ],
 
 ];

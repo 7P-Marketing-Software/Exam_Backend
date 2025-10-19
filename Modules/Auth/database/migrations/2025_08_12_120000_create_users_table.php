@@ -15,19 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique()->nullable();
-            $table->string('country_code')->nullable();
             $table->string('phone')->unique()->nullable();
             $table->string('password');
-            $table->string('profile_image')->nullable();
-            $table->enum('gender', ['male', 'female'])->nullable();
-            $table->string('otp')->nullable();
-            $table->timestamp('otp_sent_at')->nullable();
-            $table->timestamp('otp_verified_at')->nullable();
-            $table->timestamp('otp_expires_at')->nullable();
-            $table->integer('otp_attempts')->default(0);
-            $table->timestamp('last_active_at')->nullable();
-            $table->string('google_id')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }

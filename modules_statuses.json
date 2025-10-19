@@ -1,3 +1,6 @@
 {
-    "Auth": true
+    "Auth": true,
+    "Student": true,
+    "Exam": true,
+    "ExamAnswer": true
 }
