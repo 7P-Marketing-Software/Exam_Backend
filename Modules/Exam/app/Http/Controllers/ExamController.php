@@ -70,7 +70,10 @@ class ExamController extends Controller
         if (! $exam) {
             return $this->respondNotFound(null, "Exam not found.");
         }
-
+        if($exam->model_answer)
+        {
+            $this->($exam->model_answer);
+        }
         $exam->delete();
         return $this->respondOk(null, 'Exam deleted successfully');
     }
