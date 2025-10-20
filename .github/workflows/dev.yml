@@ -1,0 +1,20 @@
+name: Deploy exam Backend to dev 
+# updated
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Checkout
+      #   uses: actions/checkout@v2
+
+      - name: Deploy to dev server
+        uses: appleboy/ssh-action@master
+        with:
+          username: faheem
+          host: ${{ secrets.Main_Server }}
+          password: ${{ secrets.FAHEEM_PASS }}
+          script: 'cd ~ && ./server_deploy_exam.sh'
