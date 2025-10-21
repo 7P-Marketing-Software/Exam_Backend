@@ -2,7 +2,6 @@
 
 namespace Modules\Exam\Http\Requests;
 
-use App\Rules\OneCorrectAnswer;
 use Illuminate\Foundation\Http\FormRequest;
 class UpdateExamRequest extends FormRequest
 {
@@ -26,7 +25,7 @@ class UpdateExamRequest extends FormRequest
             'questions.*.versions' => 'array',
             'questions.*.versions.*.title' => 'nullable|string',
             'questions.*.versions.*.image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-            'questions.*.answers' => ['sometimes', 'array', new OneCorrectAnswer],
+            'questions.*.answers' => ['sometimes', 'array'],
             'questions.*.answers.*.title' => 'required|string',
             'questions.*.answers.*.isCorrect' => ['required', 'boolean'],
         ];

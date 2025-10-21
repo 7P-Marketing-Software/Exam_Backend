@@ -67,14 +67,16 @@ class ExamController extends Controller
     {
         $exam = Exam::find($examId);
 
-        if (! $exam) {
+        if (!$exam) {
             return $this->respondNotFound(null, "Exam not found.");
         }
-        if($exam->model_answer)
-        {
+
+        if ($exam->model_answer) {
             $this->deleteFromSpaces($exam->model_answer);
         }
+
         $exam->delete();
+
         return $this->respondOk(null, 'Exam deleted successfully');
     }
 }
